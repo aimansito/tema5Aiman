@@ -48,10 +48,9 @@ public class ej11 {
         }
         return arrayPalabras;
     }
-    public static void mostrarArray(){
-        String[] arrayPalabras = rellenarPalabras();
-        for(int i = 0;i<arrayPalabras.length;i++){
-            JOptionPane.showMessageDialog(null,"Posición: "+i+" Palabra: "+arrayPalabras[i]);
+    public static void mostrarArray(String[] rellenarPalabras){
+        for(int i = 0;i<rellenarPalabras.length;i++){
+            JOptionPane.showMessageDialog(null,"Posición: "+i+" Palabra: "+rellenarPalabras[i]);
         }
     }
     public static void vocalesMas() {

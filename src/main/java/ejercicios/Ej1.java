@@ -4,7 +4,6 @@
  */
 package ejercicios;
 
-import static ejercicios.ej11.contarVocales;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -16,34 +15,40 @@ import javax.swing.JOptionPane;
 public class Ej1 {
 
     public static void main(String[] args) {
-//       int[] buscandoLetra = buscarLetra('i');
-//       for(int i = 0;i<buscandoLetra.length;i++){
-//           System.out.println(buscandoLetra[i]);
-//           if(buscandoLetra[i]!=-1){
-//               System.out.println("La letra se encuentra en la posicion: "+i+1);
-//           }
-//       }
-//       mostrarArray();
-//       String[] vocalesMas=vocalesMas();
-//       for(int i = 0;i<vocalesMas.length;i++){
-//           System.out.println(vocalesMas[i]);
-//       }
         String[] rellenarPalabras = rellenarPalabras();
-        vocalesMas(rellenarPalabras);
+        mostrarArray(rellenarPalabras);
+        
+        String[] vocalesMas=vocalesMas(rellenarPalabras);
+        for(int i = 0;i<vocalesMas.length;i++){
+            System.out.println("Las palabras con 3 vocales o más son: "+vocalesMas[i]);
+        }
+        
+        String[] vocalesMenos=vocalesMenos(rellenarPalabras);
+        for(int i = 0;i<vocalesMenos.length;i++){
+            System.out.println("Las palabras con 3 vocales o menos son: "+vocalesMenos[i]);
+        }
+        
+        int[] buscandoLetra = buscarLetra('i',rellenarPalabras);
+        for(int i = 0;i<buscandoLetra.length;i++){
+            System.out.println(buscandoLetra[i]);
+            if(buscandoLetra[i]!=-1){
+                System.out.println("La letra se encuentra en la posicion: "+i);
+            }
+        }
     }
 
     public static int numeroPalabras() {
         boolean repetir = true;
         int numPalabras = 0;
-        do {
+        do{
             String num = JOptionPane.showInputDialog("Introduce el número de palabras inicial");
-            try {
+            try{
                 numPalabras = Integer.parseInt(num);
                 repetir = false;
-            } catch (NumberFormatException nfe) {
+            }catch (NumberFormatException nfe) {
                 System.out.println("Introduce un número entero");
             }
-        } while (repetir);
+        }while (repetir);
         return numPalabras;
     }
 
@@ -66,17 +71,38 @@ public class Ej1 {
         return arrayPalabras;
     }
 
-    public static void mostrarArray() {
+    public static void mostrarArray(String[] rellenarPalabras) {
         String texto = "";
-        String[] arrayPalabras = rellenarPalabras();
-        for (int i = 0; i < arrayPalabras.length; i++) {
-            texto += " Posición:" + i + " Palabra: " + arrayPalabras[i]
+        for (int i = 0; i < rellenarPalabras.length; i++) {
+            texto += " Posición:" + i + " Palabra: " + rellenarPalabras[i]
                     + "||";
         }
         JOptionPane.showMessageDialog(null, texto);
     }
 
     public static String[] vocalesMas(String[] rellenarPalabras) {
+        String[] arrayNuevoVocalesMas = new String[rellenarPalabras.length];
+        int contadorPalabras = 0;
+        for (int i = 0; i < rellenarPalabras.length; i++) {
+            int contadorVocales = contarVocales(rellenarPalabras[i]);
+            if (contadorVocales >= 3) {
+                arrayNuevoVocalesMas[contadorPalabras] = rellenarPalabras[i];
+                contadorPalabras++;
+            } 
+        }
+        return arrayNuevoVocalesMas;
+    }
+    public static int contarVocales(String palabra) {
+        int contadorVocales = 0;
+        for (int j = 0; j < palabra.length(); j++) {
+            char letra = Character.toLowerCase(palabra.charAt(j));
+            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+                contadorVocales++;
+            }
+        }
+        return contadorVocales;
+    }
+    public static String[] vocalesMenos(String[] rellenarPalabras) {
         String[] arrayNuevoVocalesMas = new String[rellenarPalabras.length];
         int contador = 0;
         int contadorPalabras = 0;
@@ -91,46 +117,15 @@ public class Ej1 {
                 }
             }
             int contadorVocales = contarVocales(rellenarPalabras[i]);
-            if (contadorVocales >= 3) {
-                arrayNuevoVocalesMas[contadorPalabras] = rellenarPalabras[i];
-                System.out.println("La palabra " + arrayNuevoVocalesMas[contadorPalabras] + " tiene tres vocales o más");
-                contadorPalabras++;
-            } else {
-                System.out.println("La palabra " + rellenarPalabras[i] + " no tiene más de 3 vocales");
-            }
-        }
-        return arrayNuevoVocalesMas;
-    }
-
-    public static String[] vocalesMenos() {
-        String[] arrayVocalesMenos = rellenarPalabras();
-        String[] arrayNuevoVocalesMas = new String[arrayVocalesMenos.length];
-        int contador = 0;
-        int contadorPalabras = 0;
-        for (int i = 0; i < arrayVocalesMenos.length; i++) {
-            for (int j = 0; j < arrayVocalesMenos[i].length(); j++) {
-                if (arrayVocalesMenos[i].charAt(j) == 'a'
-                        || arrayVocalesMenos[i].charAt(j) == 'e'
-                        || arrayVocalesMenos[i].charAt(j) == 'i'
-                        || arrayVocalesMenos[i].charAt(j) == 'o'
-                        || arrayVocalesMenos[i].charAt(j) == 'u') {
-                    contador++;
-                }
-            }
-            int contadorVocales = contarVocales(arrayVocalesMenos[i]);
             if (contadorVocales <= 3) {
-                arrayNuevoVocalesMas[contadorPalabras] = arrayVocalesMenos[i];
-                System.out.println("La palabra " + arrayNuevoVocalesMas[contadorPalabras] + " tiene tres vocales o menos");
-                contadorPalabras++;
-            } else {
-                System.out.println("La palabra " + arrayVocalesMenos[i] + " tiene más de 3 vocales");
-            }
+                arrayNuevoVocalesMas[contadorPalabras] = rellenarPalabras[i];
+               contadorPalabras++;
+            } 
         }
-        return arrayVocalesMenos;
+        return rellenarPalabras;
     }
 
-    public static int[] buscarLetra(char buscar) {
-        String[] Letra = rellenarPalabras();
+    public static int[] buscarLetra(char buscar,String[] Letra) {
         int[] letrasPosicion = new int[Letra.length];
         for (int i = 0; i < Letra.length; i++) {
             for (int j = 0; j < Letra[i].length(); j++) {
