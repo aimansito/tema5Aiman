@@ -17,7 +17,7 @@ public class Ej1 {
     public static void main(String[] args) {
         String[] rellenarPalabras = rellenarPalabras();
         mostrarArray(rellenarPalabras);
-        
+
         String[] vocalesMas=vocalesMas(rellenarPalabras);
         for(int i = 0;i<vocalesMas.length;i++){
             System.out.println("Las palabras con 3 vocales o más son: "+vocalesMas[i]);
@@ -74,8 +74,7 @@ public class Ej1 {
     public static void mostrarArray(String[] rellenarPalabras) {
         String texto = "";
         for (int i = 0; i < rellenarPalabras.length; i++) {
-            texto += " Posición:" + i + " Palabra: " + rellenarPalabras[i]
-                    + "||";
+            texto += " Posición:" + i + " Palabra: " + rellenarPalabras[i]+"\n";
         }
         JOptionPane.showMessageDialog(null, texto);
     }
@@ -107,15 +106,6 @@ public class Ej1 {
         int contador = 0;
         int contadorPalabras = 0;
         for (int i = 0; i < rellenarPalabras.length; i++) {
-            for (int j = 0; j < rellenarPalabras[i].length(); j++) {
-                if (rellenarPalabras[i].charAt(j) == 'a'
-                        || rellenarPalabras[i].charAt(j) == 'e'
-                        || rellenarPalabras[i].charAt(j) == 'i'
-                        || rellenarPalabras[i].charAt(j) == 'o'
-                        || rellenarPalabras[i].charAt(j) == 'u') {
-                    contador++;
-                }
-            }
             int contadorVocales = contarVocales(rellenarPalabras[i]);
             if (contadorVocales <= 3) {
                 arrayNuevoVocalesMas[contadorPalabras] = rellenarPalabras[i];
@@ -129,7 +119,7 @@ public class Ej1 {
         int[] letrasPosicion = new int[Letra.length];
         for (int i = 0; i < Letra.length; i++) {
             for (int j = 0; j < Letra[i].length(); j++) {
-                if (Letra[i].charAt(j) == buscar) {
+                if (Letra[i].toLowerCase().charAt(j) == buscar) {
                     letrasPosicion[i] = j;
                     break;
                 } else {
