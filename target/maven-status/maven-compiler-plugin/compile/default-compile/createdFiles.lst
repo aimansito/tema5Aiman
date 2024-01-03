@@ -1,4 +1,6 @@
-algoritmos/EjClase.class
-ejemplos/Main.class
-estructuraDatos/EstructuraDeDatos.class
-ejemplos/Cliente.class
+estructuraDatos\EstructuraDeDatos.class
+algoritmos\EjClase.class
+ejemplos\Main.class
+voluntario\Voluntario.class
+ejemplos\Cliente.class
+voluntario\Programa.class
