@@ -51,8 +51,4 @@ public class Voluntario {
         final Voluntario other = (Voluntario) obj;
         return Objects.equals(this.nombre, other.nombre);
     }
-    
-    
-    
-    
 }
