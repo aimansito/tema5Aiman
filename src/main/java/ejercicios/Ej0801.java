@@ -26,7 +26,7 @@ public class Ej0801 {
         int num1 = 2;
         ArrayList<String> letras1 = new ArrayList<>(num1);
         for(int i = 0;i<num1;i++){
-            letras1.add(aleatorio = RandomStringUtils.randomAlphabetic(3));
+            letras1.add(aleatorio = RandomStringUtils.randomAlphabetic(1));
         }
         for(String aux:letras1){
             System.out.print(" Lista 1: "+aux);
@@ -38,6 +38,7 @@ public class Ej0801 {
         for(String aux:letras2){
             System.out.print(" Lista 2: "+aux);
         }
+        System.out.println("");
         System.out.println("-----------------");
         ArrayList<String> letras3 = new ArrayList<>();
         for (int i = 0; i < letras1.size(); i++) {
@@ -46,9 +47,9 @@ public class Ej0801 {
             }
         }
         System.out.println("-----------");
-        //Api Stream
-        letras3.forEach(e->System.out.println("Lista 3: "));
-        //lambda
+        System.out.println("LAMBDA");
+        letras3.forEach(e->System.out.println(letras3));
+        System.out.println("API STREAM");
         letras3.forEach(System.out::println);
     }
 }
