@@ -4,12 +4,17 @@
  */
 package dado;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author aiman
  */
 public class Programa {
     public static void main(String[] args) {
-        
+        ArrayList<Integer> caras = new ArrayList<>();
+        LanzarDado dado1 = new LanzarDado();
+        dado1.listaRellena();
+       
     }
 }
