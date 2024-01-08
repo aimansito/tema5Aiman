@@ -15,7 +15,7 @@ import java.util.Iterator;
 public class EstructuraDeDatos {
     public static void main(String[] args) {
 
-        //la lista tiene tamaño 0 y no tinee elementos 
+        //la lista tiene tamaño 0 y no tiene elementos 
         ArrayList<Integer> lista = new ArrayList<>();
         // tamaño
         System.out.println("Tamaño: "+lista.size());

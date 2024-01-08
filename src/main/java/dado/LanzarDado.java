@@ -5,6 +5,7 @@
 package dado;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 
 /**
@@ -12,7 +13,8 @@ import java.util.Random;
  * @author aiman
  */
 public class LanzarDado {
-    Random random = new Random();
+
+    public static Random random = new Random();
     //atributo lista enteros    
     //EL constructor de del objeto rellena una lista simulando 1000 lanzamientos del dado
     //constructor parametrizado con el número de tiradas a generar
@@ -20,30 +22,52 @@ public class LanzarDado {
     //metodo para saber el numero de veces que ha salido una cara 
     //objeto de instancia 
     //metodo que borre todos los elementos que tengan x cara borrarCaras
-    
-    public  final int NUM_MAX= 1000;
-    private int numDado; 
+
+    public final int NUM_MAX = 1000;
+    private int numDado;
     private ArrayList<Integer> caras = new ArrayList<>();
-    public void listaRellena(){ 
-        int dado = 0;
-        for(int i = 0;i<NUM_MAX;i++){
-            dado = random.nextInt(1,7);
-            caras.add(i, dado);
+
+    public LanzarDado() {
+        for (int i = 0; i < NUM_MAX; i++) {
+            this.caras.add(numDado = random.nextInt(1, 7));
         }
-        System.out.println(caras);
     }
-    public int devolverNumCaras(int num){
+
+    public LanzarDado(int num) {
+        for (int i = 0; i < num; i++) {
+            this.caras.add(numDado = random.nextInt(1, 7));
+        }
+    }
+
+//    public ArrayList<Integer> listaRellena(){ 
+//        int dado = 0;
+//        for(int i = 0;i<NUM_MAX;i++){
+//            dado = random.nextInt(1,7);
+//            caras.add(i, dado);
+//        }
+//        return caras;
+//    }
+    public int devolverNumCaras(int num) {
         int contador = 0;
-        for(int i = 0;i<caras.size();i++){
-            if(caras.get(i)==num){
+        for (int i = 0; i < caras.size(); i++) {
+            if (caras.get(i) == num) {
                 contador++;
             }
         }
-        return contador; 
+        return contador;
+    }
+    public void borrarCaras(int num){
+        Iterator<Integer> borrarCara = caras.iterator();
+        while(borrarCara.hasNext()){
+            if(borrarCara.next()==num){
+                borrarCara.remove();
+            }
+        }
     }
 //    public int borrarCaras(){
 //        
 //    }
+
     public Random getRandom() {
         return random;
     }
@@ -62,12 +86,12 @@ public class LanzarDado {
 
     @Override
     public String toString() {
+        String texto = "";
         StringBuilder sb = new StringBuilder();
-        sb.append("LanzarDado{");
-        sb.append(", caras=").append(caras);
-        sb.append('}');
+        for (int i = 0; i < caras.size(); i++) {
+            texto += "Posición: " + (i + 1) + " Valor: " + caras.get(i) + "\n";
+        }
+        sb.append(texto);
         return sb.toString();
     }
-    
-    
 }

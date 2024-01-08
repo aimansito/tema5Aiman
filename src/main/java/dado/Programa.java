@@ -12,9 +12,14 @@ import java.util.ArrayList;
  */
 public class Programa {
     public static void main(String[] args) {
-        ArrayList<Integer> caras = new ArrayList<>();
-        LanzarDado dado1 = new LanzarDado();
-        dado1.listaRellena();
+        
+        LanzarDado dado1 = new LanzarDado(10);
+        System.out.println(dado1);
+        System.out.println("----------");
+        System.out.println(dado1.devolverNumCaras(6));
+        System.out.println("----------");
+        dado1.borrarCaras(5);
+        System.out.println(dado1);
        
     }
 }
