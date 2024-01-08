@@ -23,7 +23,7 @@ public class Programa {
         do{
             do{
                 try{
-                    num = random.nextInt(1,30);
+                    num = random.nextInt(nombres.size());
                     repetir=false;
                 }catch(IndexOutOfBoundsException iobe){
                     System.out.println("Ese compañero ya fue voluntario");
