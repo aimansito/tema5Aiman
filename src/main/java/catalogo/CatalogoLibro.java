@@ -15,17 +15,19 @@ import java.util.Comparator;
  */
 public class CatalogoLibro {
     public static void main(String[] args) {
-        Libro l1 = new Libro("123","Platero y yo","Messi",
+        Libro l1 = new Libro("1","Platero y yo","Messi",
                 "Planeta",123);
         Libro l2 = new Libro(l1);
         
+        Libro l3 = new Libro("1","Platero y yo","Messi",
+                "Mercurio",123);
         ArrayList<Libro> lista = new ArrayList<>();
         lista.add(new Libro("143","Qijote","Cervantes",
                 "Planeta",144));
         lista.add(new Libro ("141","Caperucita","Antonio",
                 "Planeta",140));
         lista.add(new Libro ("142","Caperucita","Bartolo",
-                "Planeta",140));
+                "Mercurio",140));
         
         //ordenar por isbn
         
@@ -51,8 +53,15 @@ public class CatalogoLibro {
         // new libro().setIsbn("lo que yo quiera")
         // criterio (e1,e2)->l1.getAutor().compareToIgnoreCase(e2.getAutor()); 
         Libro n = new Libro();
-        n.setIsbn("142");
-        int posicion = Collections.binarySearch(lista, n,(e1,e2)->l1.getIsbn().compareToIgnoreCase(e2.getIsbn()));
+        n.setIsbn("123");
+        n.setNumPags(3);
+        n.setEditorial("Mercurio");
+        int posicion = Collections.binarySearch(lista, lista.get(2),(e1,e2)->lista.get(2).getEditorial().compareToIgnoreCase(e2.getEditorial()));
         System.out.println("El libro de isbn esta en :  "+posicion);
+        
+        lista.forEach(System.out::println);
+        
+        //int posicion = Collections.binarySearch(lista, n, (e1, e2) -> l1.getEditorial().compareToIgnoreCase(e2.getEditorial()));
+
     }
 }
