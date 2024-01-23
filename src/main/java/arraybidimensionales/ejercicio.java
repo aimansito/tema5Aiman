@@ -15,4 +15,9 @@ public class ejercicio {
     //El programa crea la matriz con esos tamaños y 
     //debe rellenarla solicitando al usuario los valores a introducir. 
     //Una vez esté rellena, se debe mostrar la matriz completa y la suma de sus elementos.
+    
+    //filtrar entradas , array , si es numero negativo 
+    
+    //otro ejercicio
+    
 }
