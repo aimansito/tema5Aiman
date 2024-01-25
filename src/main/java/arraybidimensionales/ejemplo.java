@@ -32,8 +32,8 @@ public class ejemplo {
             {9,10,11},
             {0,0,0}
         };
-        
-        System.out.println("Filas de matriz 2: "+matriz2.length);
+
+            System.out.println("Filas de matriz 2: "+matriz2.length);
         System.out.println("Columnas de matriz 2 , fila 2: "+matriz2[1].length);
         ///Recorrido de todos los elementos de la matriz
         //recorremos las filas con length 

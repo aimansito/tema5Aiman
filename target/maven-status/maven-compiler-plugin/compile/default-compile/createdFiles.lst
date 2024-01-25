@@ -1,6 +1,8 @@
-<<<<<<< Updated upstream
-arraybidimensionales/ejemplo.class
-equipo/Equipo.class
-equipo/EquipoPrograma.class
-equipo/EquipoRecord.class
-catalogo/LibroRecord.class
+arraybidimensionales\Celda.class
+equipo\Equipo.class
+arraybidimensionales\ejercicio.class
+equipo\EquipoRecord.class
+arraybidimensionales\Ejercicio3.class
+arraybidimensionales\ejemplo.class
+catalogo\LibroRecord.class
+equipo\EquipoPrograma.class
