@@ -56,7 +56,9 @@ public class CatalogoLibro {
         n.setIsbn("123");
         n.setNumPags(3);
         n.setEditorial("Mercurio");
+        System.out.println("---------------");
         int posicion = Collections.binarySearch(lista, lista.get(2),(e1,e2)->lista.get(2).getEditorial().compareToIgnoreCase(e2.getEditorial()));
+        System.out.println("---------------");
         System.out.println("El libro de isbn esta en :  "+posicion);
         
         lista.forEach(System.out::println);
