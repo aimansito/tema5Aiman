@@ -12,10 +12,31 @@ import java.util.ArrayList;
  */
 public class Celda {
     private static ArrayList<Integer> numCasilla = new ArrayList<>();
+    private int fila ;
+    private int columna;
 
-    public Celda(ArrayList<Integer> numCasilla) {
-        this.numCasilla = numCasilla;
+    public Celda(int fila, int columna) {
+        this.fila = fila;
+        this.columna = columna;
     }
+
+    public int getFila() {
+        return fila;
+    }
+
+    public void setFila(int fila) {
+        this.fila = fila;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    public void setColumna(int columna) {
+        this.columna = columna;
+    }
+
+   
 
     public Celda() {
     }
@@ -34,13 +55,14 @@ public class Celda {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Celda{");
-        sb.append("numCasilla=").append(numCasilla);
+        sb.append("fila=").append(fila);
+        sb.append(", columna=").append(columna);
         sb.append('}');
         return sb.toString();
     }
+    
+    
 
-    
-    
     public  ArrayList<Integer> posicionCasilla(char[][] letras, char letra){
         for(int i = 0;i<letras.length;i++){
             for(int j = 0;j<letras[i].length;j++){
