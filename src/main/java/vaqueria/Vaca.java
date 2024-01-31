@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author aiman
  */
 public class Vaca {
+    
     private int id ;
     private LocalDate fechaNacimiento;
     private String descripcion;

@@ -25,7 +25,7 @@ public class Vaqueria {
     public Vaqueria(Set<Vaca> vacas) {
         this.vacas = new HashSet<>();
     }
-    //wed
+    //
 
     public Vaqueria() {
     }
