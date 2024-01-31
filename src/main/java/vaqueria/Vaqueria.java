@@ -4,6 +4,7 @@
  */
 package vaqueria;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,14 +23,9 @@ public class Vaqueria {
 //
    private Set<Vaca> vacas ;
 
-    public Vaqueria(Set<Vaca> vacas) {
+    public Vaqueria() {
         this.vacas = new HashSet<>();
     }
-    //
-
-    public Vaqueria() {
-    }
-    
     
     //1. Saber el número de vacas que hay.
     public int numVacas(){
@@ -41,8 +37,26 @@ public class Vaqueria {
         return vacas;
     }
     //3. Saber si la vaquería tiene vacas.
-    public boolean estaVacia(Vaca vaca){
+    public boolean estaVaca(Vaca vaca){
        return vacas.contains(vaca);
     }
-    
+     //4. Saber si un animal está en la vaquería.
+    public boolean estaVacia(){
+        return vacas.isEmpty();
+    }
+    //5. Sacar todos los animales, en forma de ArrayList.
+    public ArrayList<Vaca> sacarAnimales(){
+
+        ArrayList<Vaca> totalAnimales = new ArrayList<>(vacas);
+
+        return totalAnimales;
+        //for each para recorrer el set y hac
+    }
+    //6. Dar de baja una vaca de la vaquería.
+    public void darBaja(Vaca vaca){
+        vacas.remove(vaca);
+    }
+    public void mostrarSet(){
+        vacas.forEach(System.out::println);
+    }
 }
