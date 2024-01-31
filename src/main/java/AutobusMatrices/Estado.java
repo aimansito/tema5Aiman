@@ -9,7 +9,7 @@ package AutobusMatrices;
  * @author aiman
  */
 public enum Estado {
-     LIBRE("Libre"),
+        LIBRE("Libre"),
         OCUPADO("Ocupado"),
         MOVRED("Movilidad Reducida");
 
