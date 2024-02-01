@@ -1,5 +1,8 @@
-set/ConjuntosPersonas.class
-set/Persona.class
-set/Ejemplo.class
-AutobusMatrices/autobus.class
-set/ConjuntoPersonasOrdenado.class
+set\ConjuntoPersonasOrdenado.class
+AutobusMatrices\Main.class
+AutobusMatrices\Autobus.class
+set\ConjuntosPersonas.class
+AutobusMatrices\Asientos.class
+set\Ejemplo.class
+set\Persona.class
+AutobusMatrices\Estado.class

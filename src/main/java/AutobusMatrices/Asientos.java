@@ -9,19 +9,32 @@ package AutobusMatrices;
  * @author aiman
  */
 public class Asientos {
-    private int numAsientos ;
+
+    private int numAsientos;
     private Estado estado;
+    private static int contador = 0;
 
-
-    public Asientos(int numAsientos, boolean estado) {
-        this.numAsientos = numAsientos;
+    public Asientos() {
+        this.numAsientos = contador++;
         this.estado = Estado.LIBRE;
     }
 
-    public static Estado reservarAsientos(){
+    public void liberarAsientos() {
+        this.estado = Estado.LIBRE;
+    }
+
+    public void ocuparAsiento() {
+        this.estado = Estado.OCUPADO;
+    }
+
+    public void asientoMovRed() {
+        this.estado = Estado.MOVRED;
+    }
+
+    public static Estado reservarAsientos() {
         return Estado.OCUPADO;
     }
-    
+
     public int getNumAsientos() {
         return numAsientos;
     }
@@ -41,11 +54,9 @@ public class Asientos {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Asientos{");
-        sb.append("numAsientos=").append(numAsientos);
-        sb.append(", estado=").append(estado);
-        sb.append('}');
+
+        sb.append("[" + numAsientos + "]");
+        sb.append("[" + estado + "]");
         return sb.toString();
     }
-
 }
