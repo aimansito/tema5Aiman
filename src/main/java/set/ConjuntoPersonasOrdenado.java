@@ -38,7 +38,6 @@ public class ConjuntoPersonasOrdenado {
         for (Persona p : juntaDirectiva) {
             System.out.println(p);
         }
-        
         juntaDirectiva.add(new Persona("33678551D", "Lucas", "Vázquez", LocalDate.of(1988, Month.DECEMBER, 5)));
         
         System.out.printf("Ahora el set contiene %d elementos", juntaDirectiva.size());
@@ -53,6 +52,5 @@ public class ConjuntoPersonasOrdenado {
         
         System.out.println("----- Después del borrado de María López ------------");
         juntaDirectiva.forEach(System.out::println);
-
     }
 }

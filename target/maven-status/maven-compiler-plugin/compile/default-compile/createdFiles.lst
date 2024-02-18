@@ -1,8 +1,15 @@
 set\ConjuntoPersonasOrdenado.class
+ejercicio20\Asientos.class
 AutobusMatrices\Main.class
+BusquedaMatrices\BusquedaSencilla.class
 AutobusMatrices\Autobus.class
 set\ConjuntosPersonas.class
+ejercicios_matrices\Alumno.class
+ejercicios_matrices\Marco.class
+ejercicios_matrices\Matriz.class
 AutobusMatrices\Asientos.class
+ejercicio20\Prueba.class
 set\Ejemplo.class
 set\Persona.class
+ejercicio20\Avion.class
 AutobusMatrices\Estado.class
