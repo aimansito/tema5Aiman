@@ -63,10 +63,10 @@ public class Celda {
     
     
 
-    public  ArrayList<Integer> posicionCasilla(char[][] letras, char letra){
-        for(int i = 0;i<letras.length;i++){
-            for(int j = 0;j<letras[i].length;j++){
-                if(letras[i][j]==letra){
+    public static ArrayList<Integer> posicionCasilla(int[][] numeros){
+        for(int i = 0;i<numeros.length;i++){
+            for(int j = 0;j<numeros[i].length;j++){
+                if(numeros[i][j]==1){
                     numCasilla.add(j);
                     numCasilla.add(i);
                 }
